@@ -3,3 +3,7 @@ pandas
 plotly
 requests
 streamlit-extras
+speechrecognition
+pyttsx3
+gtts
+pydub
