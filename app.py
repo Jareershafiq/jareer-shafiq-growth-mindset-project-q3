@@ -1,16 +1,13 @@
 import streamlit as st
 import speech_recognition as sr
-import pyttsx3
 from gtts import gTTS
 import os
 
-# Initialize text-to-speech engine
-engine = pyttsx3.init()
-
 def speak(text):
-    """Convert text to speech"""
-    engine.say(text)
-    engine.runAndWait()
+    """Convert text to speech using gTTS"""
+    tts = gTTS(text=text, lang="en")
+    tts.save("welcome.mp3")
+    st.audio("welcome.mp3", autoplay=True)
 
 def recognize_speech():
     """Recognize speech from microphone"""
